@@ -1,0 +1,46 @@
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.main-div {
+    padding-top: 80px;
+}
+
+.first-div,
+.second-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    text-align: justify;
+}
+
+.first-div .left-div,
+.second-div .right-div {
+    width: 15%;
+
+}
+
+.first-div .right-div,
+.second-div .left-div {
+    width: 80%;
+}
+
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.first-div{animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both}
+
+@keyframes slide-in-right{0%{transform:translateX(1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.second-div{animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
