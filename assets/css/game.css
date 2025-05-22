@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'augusta';
+    src: url('../ttf/augusta.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--primary);
+}
+
+.main-div {
+    padding-top: 80px !important;
+}
+
+.first-div,
+.second-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    text-align: justify;
+}
+
+.first-div p,
+.second-div p {
+    font-family: 'augusta', sans-serif;
+}
+
+.first-div h1,
+.second-div h1 {
+    font-family: 'augusta', sans-serif !important;
+    font-size: 3rem;
+}
+
+/*.first-div .left-div,*/
+/*.second-div .right-div {*/
+/*    width: 35%;*/
+
+/*}*/
+
+.first-div .right-div,
+.second-div .left-div {
+    padding: 0 5%;
+}
+
+@keyframes slide-in-left{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.first-div{animation:slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both}
+
+@keyframes slide-in-right{0%{transform:translateX(1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.second-div{animation:slide-in-right .5s cubic-bezier(.25,.46,.45,.94) both}
+
+/****************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+.slider {
+    width: 500px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /*
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    */
+}
+.slides::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+.slides > div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 500px;
+    height: 300px;
+    /*margin-right: 50px;*/
+    border-radius: 10px;
+    background: #eee;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+}
+.slides > div:target {
+    /*   transform: scale(0.8); */
+}
+.author-info {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
+.author-info a {
+    color: white;
+}
+.slides img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.slider > a {
+    display: inline-flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 0 0 0.5rem 0;
+    position: relative;
+}
+.slider > a:active {
+    top: 1px;
+}
+.slider > a:focus {
+    background: #000;
+}
+
+/*!* Don't need button navigation *!*/
+/*@supports (scroll-snap-type) {*/
+/*    .slider > a {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+
+.main-div {
+    padding-top: 10px;
+    height: 100vh;
+    margin-bottom: 5%;
+}
+
+.main-div .main-div-container {
+    background: #fff;
+    border-radius: 10px;
+    color: #000;
+    margin: 2%;
+    padding: 20px;
+}
+
+@keyframes scale-in-center{0%{transform:scale(0);opacity:1}100%{transform:scale(1);opacity:1}}
+.main-div-container{animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both}

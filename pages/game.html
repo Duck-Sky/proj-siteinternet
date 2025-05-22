@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu - HearthOfTheCult</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/download.css">
+    <link rel="stylesheet" href="../assets/css/game.css">
+    <link rel="icon" href="../assets/img/logo.ico" type="image/icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="main-div">
+        <nav class="main-navbar fixed">
+            <div class="nav-left">
+                <a href="../index.html"><img class="nav-title" src="../assets/img/title.png" alt="Title"></a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Jeu</a>
+                <a href="../pages/team.html">Equipe</a>
+                <a href="../pages/download.html">Téléchargement</a>
+            </div>
+        </nav>
+
+        <div class="main-div-container first-div ">
+            <div class="left-div">
+                <div class="slider">
+                    <div class="slides">
+                        <div id="carrousel1-1">
+                            <img src="../assets/img/carrousel1-1.png" alt="Carrousel 1-1">
+                        </div>
+                        <div id="carrousel1-2">
+                            <img src="../assets/img/carrousel1-2.png" alt="Carrousel 1-2">
+                        </div>
+                        <div id="carrousel1-3">
+                            <img src="../assets/img/carrousel1-3.png" alt="Carrousel 1-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-div">
+                <h1>Hearth Of The Cult</h1>
+                <p>Nous suivons Nox, une chouette animée par la colère et la vengeance. Il décide
+                    de partir anéantir la secte qui a décimé la sienne et tué sa petite sœur
+                    adorée. Pour cela, il devra infiltrer la secte de son ennemi juré. Incapable
+                    d’accepter la mort de sa sœur, il la ressuscitera lors d’un rituel interdit. Par
+                    la suite, il sauvera d’autres victimes promises au sacrifice, qui deviendront
+                    les fidèles de Nox et donneront naissance à une nouvelle secte. Il affrontera
+                    alors Larvis, la larve monstrueuse responsable de sa tragédie, dans un combat
+                    terrible et décisif.</p>
+            </div>
+        </div>
+        <div class="main-div-container second-div">
+            <div class="left-div">
+                <p>Lorsque la question du genre de jeu que nous allions créer a été soulevée, il nous est d’abord venu l’idée d’un jeu de stratégie ressemblant au jeu populaire Among Us. Cependant, au fur et à mesure que nous essayions de nous projeter dans cette idée, Helena a suggéré un changement de genre que nous avons rapidement adopté. Nous avons donc commencé à envisager un autre type de jeu : un plateformer. En échangeant sur l’univers du jeu, l’idée d’une histoire à propos d’un culte a fait l’unanimité. À ce stade, les idées ont fusé : que ce soit pour les mécaniques, le design, l’histoire ou les techniques, chacun y a ajouté quelque chose. Le concept final de notre jeu est donc un plateformer 2D ayant pour protagoniste un membre d’un culte partant à l’aventure dans un monde rempli de personnages ressemblant à des animaux anthropomorphiques, de monstres et de secrets interdits. Les premiers concepts de l’histoire et du contexte ont été principalement imaginés par Helena et Athina, puis repris par Amine, Dylan et Yusuf, qui ont également beaucoup apporté en termes de mécaniques au projet et au concept.</p>
+            </div>
+            <div class="right-div">
+                <div class="slider">
+                    <div class="slides">
+                        <div id="carrousel2-1">
+                            <img src="../assets/img/carrousel2-1.png" alt="Carrousel 2-1">
+                        </div>
+                        <div id="carrousel2-2">
+                            <img src="../assets/img/carrousel2-2.png" alt="Carrousel 2-2">
+                        </div>
+                        <div id="carrousel2-3">
+                            <img src="../assets/img/carrousel2-3.png" alt="Carrousel 2-3">
+                        </div>
+                        <div id="carrousel2-4">
+                            <img src="../assets/img/carrousel2-4.png" alt="Carrousel 2-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 1px"></div>
+    </div>
+</main>
+<script>
+    document.querySelectorAll('.slides').forEach(function(slides) {
+        const slideDivs = Array.from(slides.children);
+        let current = 0;
+        setInterval(() => {
+            current = (current + 1) % slideDivs.length;
+            const slideWidth = slideDivs[0].offsetWidth;
+            slides.scrollLeft = current * slideWidth;
+        }, 2000);
+    });
+</script>
+</body>
+</html>
